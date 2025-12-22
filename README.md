@@ -1,107 +1,129 @@
-# 🎓 Predictive-Analytics-for-Student-Scores
+📱 Google Play Store App Rating Prediction
+📌 Project Overview
 
-## Project Overview
+This project focuses on predicting the ratings of Google Play Store applications using machine learning techniques. By analyzing various app features such as category, reviews, size, installs, price, and content rating, the model aims to estimate an app’s rating accurately.
 
-This project implements a foundational predictive analytics workflow on the **Student Performance dataset** (`StudentsPerformance.csv`). The goal is twofold:
+The project demonstrates the complete data science pipeline including data preprocessing, exploratory data analysis (EDA), feature engineering, model building, and evaluation.
 
-1.  Perform comprehensive Exploratory Data Analysis (EDA) and visualization to understand the factors influencing student scores (Unit I).
-2.  Develop and evaluate a **Simple Linear Regression** model to predict student Math Scores (Unit II).
+🎯 Objective
 
-The entire process is structured into a clear, 7-step Machine Learning pipeline for reproducibility.
+To analyze factors affecting app ratings on the Google Play Store
 
-### Core Concepts Covered:
+To build a machine learning model that predicts app ratings
 
-  * Data Preprocessing and EDA (Unit I)
-  * Visualizations and Correlation Analysis (Unit II)
-  * Simple Linear Regression (Unit II)
-  * Model Evaluation using MAE, MSE, R-squared (Unit II)
+To gain insights into what makes an app successful
 
------
+📊 Dataset Description
 
-## 🛠 Project Structure and Setup
+Source: Google Play Store dataset (public dataset)
 
-### Prerequisites
+Key Features:
 
-You need the following Python libraries installed:
+App Category
 
-```bash
-pip install pandas numpy scikit-learn matplotlib seaborn
-```
+Number of Reviews
 
-### Files in this Repository
+App Size
 
-| File | Description |
-| :--- | :--- |
-| `code.py` | The main script containing the full 7-step ML pipeline, comparison table output, and 7 enhanced visualizations. |
-| `StudentsPerformance.csv` | The dataset used for modeling. |
-| `README.md` | This file. |
+Number of Installs
 
------
+Price
 
-## 🚀 The 7-Step Machine Learning Pipeline
+Content Rating
 
-The project code executes the following steps sequentially:
+Android Version
 
-### **1. Import Libraries**
+App Rating (Target Variable)
 
-  * Imports core libraries: `pandas`, `numpy`, `sklearn` (for modeling), `matplotlib`, and `seaborn` (for visualization).
+🛠️ Technologies Used
 
-### **2. Load the Dataset**
+Programming Language: Python
 
-  * Loads the `StudentsPerformance.csv` file into a Pandas DataFrame.
+Libraries:
 
-### **3. Dataset Cleaning & EDA (Exploratory Data Analysis)**
+pandas – data manipulation
 
-  * **Cleaning:** Checks for missing data (confirmed no null values).
-  * **Comparison Output:** Generates and prints a critical text table comparing **Mean Math Scores** by Parental Education Level and Gender.
-  * **Visualizations:** Generates **7 enhanced visualizations** (e.g., Correlation Heatmap, KDE distributions, Grouped Bar Chart) to understand variable relationships and data distribution.
+numpy – numerical operations
 
-### **4. Data Splitting**
+matplotlib, seaborn – data visualization
 
-  * Selects **Reading Score** as the feature (`X`) and **Math Score** as the target (`y`).
-  * Splits the data into 70% for training and 30% for testing.
+scikit-learn – machine learning models
 
-### **5. Model Import**
+🔍 Exploratory Data Analysis (EDA)
 
-  * Initializes the `LinearRegression` model from `sklearn`.
+Handling missing and inconsistent values
 
-### **6. Predicting Values using Model**
+Removing outliers
 
-  * Trains the model on the training data (`X_train`, `y_train`).
-  * Generates predictions (`y_pred`) on the unseen test data (`X_test`).
+Visualizing rating distributions
 
-### **7. Checking the Performance of Model**
+Analyzing relationships between features and ratings
 
-  * Calculates and prints the key regression evaluation metrics from Unit II: **R-squared**, **Mean Absolute Error (MAE)**, **Mean Squared Error (MSE)**, and **Root Mean Squared Error (RMSE)**.
+Correlation analysis
 
------
+⚙️ Data Preprocessing
 
-## 📈 Key Findings from Visualization
+Converted categorical variables using encoding techniques
 
-The extensive EDA provided key insights before modeling:
+Scaled numerical features
 
-| Visualization | Key Insight | Relevance |
-| :--- | :--- | :--- |
-| **Correlation Heatmap** | High correlation between all three scores (`math`, `reading`, `writing`), confirming that `reading score` is a strong predictor for `math score`. | **Unit II: Correlations** |
-| **Comparison Table (Text/Viz)** | Students whose parents have Master's or Bachelor's degrees consistently achieve higher mean scores. A gender gap exists across all education levels. | **Unit I: Data Preparation/Feature Importance** |
-| **KDE Distribution** | Students who completed the test preparation course show a clear shift towards higher scores compared to those who did not. | **Unit I: Feature Impact** |
+Removed irrelevant columns
 
------
+Split data into training and testing sets
 
-## 📊 Model Performance Results
+🤖 Machine Learning Model
 
-The model's performance on the test set is evaluated against the Unit II metrics:
+Model Used: Regression Models (e.g., Linear Regression / Random Forest Regression)
 
-| Metric | Result | Interpretation |
-| :--- | :--- | :--- |
-| **R-squared ($R^2$)** | $\text{[Insert R2 value from step 7]}$ | The model explains **[Insert R2 % value]** of the variance in math scores. |
-| **Mean Absolute Error (MAE)** | $\text{[Insert MAE value from step 7]}$ | The average absolute error in prediction is approximately [Insert MAE value] points. |
-| **Root Mean Squared Error (RMSE)** | $\text{[Insert RMSE value from step 7]}$ | The typical prediction error is [Insert RMSE value] points. |
+Training: 80% of data
 
------
+Testing: 20% of data
 
-## Author
+📈 Model Evaluation
 
-  * **[Chaithanya Sudheer Sakamuri]** - **[Data Science Student]**
-  * *Course:* Predictive Analytics (INT234)
-  * *Institution:* [Lovely Professinal University]
+The model performance is evaluated using:
+
+R² Score
+
+Mean Absolute Error (MAE)
+
+Root Mean Squared Error (RMSE)
+
+✅ Results
+
+The model successfully predicts app ratings with reasonable accuracy
+
+Features such as reviews, installs, and app category have a strong influence on ratings
+
+🚀 Applications
+
+Helps developers improve app quality
+
+Assists businesses in app market analysis
+
+Useful for recommendation and ranking systems
+
+🔮 Future Enhancements
+
+Use advanced models like XGBoost or Neural Networks
+
+Include user sentiment analysis from app reviews
+
+Deploy the model using Flask or Streamlit
+
+📂 Project Structure
+Google-Play-Store-App-Rating-Prediction/
+│
+├── dataset/
+│   └── googleplaystore.csv
+│
+├── notebooks/
+│   └── app_rating_prediction.ipynb
+│
+├── README.md
+└── requirements.txt
+
+👨‍💻 Author
+
+Botta Devendra
+B.Tech CSE | Data Science Enthusiast
